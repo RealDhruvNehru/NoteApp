@@ -1,6 +1,7 @@
 import express from 'express'
 import 'dotenv/config'
 import connectDb from './config/connectDB.js'
+import cors from 'cors'
 import { fetchNotes , createNote, fetchNote, updateNote, deleteNote } from './controllers/notes.controller.js'
 
 const app = express()
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 5001
 connectDb()
 
 app.use(express.json())
+app.use(cors())
 
 
 
