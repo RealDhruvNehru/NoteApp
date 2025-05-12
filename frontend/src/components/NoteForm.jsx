@@ -13,7 +13,7 @@ const NoteForm = ({ isEdit = false, initialData = { title: '', body: '' } }) => 
       // Fetch the note details for editing
       const fetchNote = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/notes/${id}`);
+          const response = await axios.get(`http://localhost:5000/api/notes/notes/${id}`);
           setNote(response.data.Note);
         } catch (error) {
           console.error('Error fetching note:', error);
@@ -35,10 +35,10 @@ const NoteForm = ({ isEdit = false, initialData = { title: '', body: '' } }) => 
     e.preventDefault();
     try {
       if (isEdit) {
-        await axios.put(`http://localhost:5000/notes/${id}`, note);
+        await axios.put(`http://localhost:5000/api/notes/notes/${id}`, note);
         navigate(`/note/${id}`);
       } else {
-        await axios.post('http://localhost:5000/post', note);
+        await axios.post('http://localhost:5000/api/notes/post', note);
         navigate('/');
       }
     } catch (error) {

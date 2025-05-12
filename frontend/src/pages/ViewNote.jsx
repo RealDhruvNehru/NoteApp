@@ -9,7 +9,7 @@ const ViewNote = () => {
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/notes/${id}`);
+        const response = await axios.get(`http://localhost:5000/api/notes/notes/${id}`);
         setNote(response.data.Note);
       } catch (error) {
         console.error('Error fetching note:', error);
@@ -20,7 +20,7 @@ const ViewNote = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/notes/${id}`);
+      await axios.delete(`http://localhost:5000/api/notes/notes/${id}`);
       window.location.href = '/'; // Redirect to the home page after deletion
     } catch (error) {
       console.error('Error deleting note:', error);

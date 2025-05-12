@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/notes');
+        const response = await axios.get('http://localhost:5000/api/notes/notes');
         setNotes(response.data.Notes);
       } catch (error) {
         console.error('Error fetching notes:', error);

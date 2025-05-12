@@ -14,6 +14,9 @@ const Navbar = () => {
           <Link to="/create" className="px-4 hover:underline">
             Create Note
           </Link>
+          <Link to="/login" className="px-4 hover:underline">
+            Login
+          </Link>
         </div>
       </div>
     </nav>
